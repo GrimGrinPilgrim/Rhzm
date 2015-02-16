@@ -1,0 +1,41 @@
+html, body, p{
+  padding: 0px;
+  margin: 0px;
+}
+html, body{
+  overflow-x:hidden;
+}
+body{
+  // background-image: url("../images/01.jpg");
+  // background-attachment: fixed;
+  // background-size: cover;
+  // @media (max-width: 800px) {
+  //   background-image: none;
+  // }
+
+}
+.article {
+  padding: 0px !important;
+}
+.RHZMwrapper {
+  background-color: #fff;
+  font-family: $fontMain;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.article-header h1 {
+  line-height: 1;
+}
+.illustration{
+  width: 100%;
+  display: block;
+  margin: 0 auto 0;
+}
+
+// .col-4 img, .col-3 img{
+//   width: 100%;
+// }
+// .col-6 p{
+//   padding-top: 15px;
+//   padding-bottom: 15px;
+// }

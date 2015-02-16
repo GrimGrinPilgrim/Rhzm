@@ -1,0 +1,87 @@
+$fontMain: Proxima Nova, Helvetica,Arial,sans-serif;
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:300);
+// @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:300&subset=latin,cyrillic);
+// grid
+$columns: 14;
+$column: 60px;
+$gutter: 25px;
+@mixin columns($num) {
+  width: $column * $num + $gutter * $num;
+}
+
+
+// $icons: sprite-map("icons/*.png", $spacing: 10px);
+// // $icons_r: sprite-map("iconsr/*.png", $spacing: 10px);
+// $duration: 0.5s;
+
+// sized sprites
+@mixin image-size($path){
+  width: image-width($path);
+  height: image-height($path);
+}
+
+@mixin sized-sprite($map, $sprite){
+  background: sprite($map, $sprite) no-repeat;
+  @include image-size(sprite-file($map, $sprite));
+}
+
+@mixin bgs($sprite) {
+  background: sprite($icons, $sprite) no-repeat;
+  // @media (-webkit-min-device-pixel-ratio: 2), (min-resoultion: 192dpi) {
+  //   background: sprite($icons_r, $sprite) no-repeat;
+  //   $ypos: round(nth(sprite-position($icons_r, $sprite), 2) / 2);
+  //     background-position: 0 $ypos;
+  //     @include background-size(ceil(image-width(sprite-path($icons_r)) / 2), ceil(image-height(sprite-path($icons_r)) / 2));
+  // }
+}
+@mixin sbgs($sprite) {
+  @include sized-sprite($icons, $sprite);
+  // @media (-webkit-min-device-pixel-ratio: 2), (min-resoultion: 192dpi) {
+  //   background: sprite($icons_r, $sprite) no-repeat;
+  //   $ypos: round(nth(sprite-position($icons_r, $sprite), 2) / 2);
+  //     background-position: 0 $ypos;
+  //     @include background-size(ceil(image-width(sprite-path($icons_r)) / 2), ceil(image-height(sprite-path($icons_r)) / 2));
+  // }
+}
+
+
+// responsive
+$break-1: 478px;
+$break-2: 768px;
+$break-3: 1024px;
+@mixin respond-to($media) {
+  @if $media == sm {
+    @media only screen and (max-width: $break-1) { @content; }
+  }
+  @if $media == mob {
+    @media only screen and (max-width: $break-2) { @content; }
+  }
+  @if $media == tablet {
+    @media only screen and (max-width: $break-3) { @content; }
+  }
+  @elseif $media == desktop {
+    @media only screen and (min-width: $break-3 + 1) { @content; }
+  }
+}
+@mixin retina() {
+  @media
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi) {
+      /* Retina-specific stuff here */
+  }
+}
+
+@mixin placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+
+@mixin animation($prop: opacity, $t1: .3s, $t2: .1s) {
+  transition: $prop $t1;
+  &:hover {
+    transition-duration: $t2;
+  }
+}

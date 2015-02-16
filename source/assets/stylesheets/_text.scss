@@ -1,0 +1,61 @@
+.head {
+  font-family: Proxima,Helvetica,Arial,sans-serif;
+  font-size: 35px;
+  padding: 35px 0 10px;
+  line-height: 50px;
+  text-align: center;
+  //font-weight: 100;
+}
+.main-text {
+  font-size: 20px;
+  line-height: 30px;
+  margin: 30px 0;
+}
+.center {
+  text-align: center;
+}
+.white {
+  color: #fff;
+  font-weight: 100;
+}
+.bold {
+  font-weight: 900;
+}
+.footnote {
+  font-family: ProximaThin,Helvetica,Arial,sans-serif;
+  font-weight: 100;
+  font-size: 16px;
+  line-height: 24px;
+  color: #666;
+}
+.illustration + .footnote{
+  margin-top: 30px;
+}
+.RHZMa {
+  color: rgb(0, 0, 0);
+  text-decoration: underline;
+  transition: all 0.2s ease-in-out;
+}
+.RHZMa:hover {
+    color: rgb(192, 18, 43);
+}
+
+@media (max-width: 800px) {
+  .main-text, .footnote {
+    width: 80%;
+    padding-right: 10%;
+    padding-left: 10%;
+  }
+  .footnote {
+    text-align: center;
+    font-size: 18px;
+    &.illustration{
+      padding-top: 0px;
+      width: 80%;
+    }
+  }
+  .head {
+    display: block;
+    font-size: 35px;
+  }
+}
