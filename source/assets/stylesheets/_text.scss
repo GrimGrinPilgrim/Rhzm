@@ -62,8 +62,26 @@
 }
 
 
-
-
+.fullimg
+{
+  -webkit-font-smoothing: antialiased;
+  .main-text 
+  {
+    font-size: 18px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: normal;
+  }
+  .title
+  {
+    font-size: 32px;
+  }
+}
+article
+{
+  padding:80px;
+}
 blockquote
 {
   font-style: italic;

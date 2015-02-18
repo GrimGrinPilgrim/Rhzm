@@ -26,7 +26,7 @@
   text-align:right;
   .main-text
   {
-    font-weight:700;
+    font-size: 20px;
   }
   &:before
   {
@@ -55,7 +55,6 @@
 #piano
 {
   background-image:image-url('bg_piano.jpg');
-  height:10vh;
 }
 #red_grand
 {
@@ -76,6 +75,10 @@
 {
   background-image:image-url('bg_movie.jpg');
   height:60vh;
+  .main-text
+  {
+    font-size: 24px;
+  }
 }
 .black
 {
