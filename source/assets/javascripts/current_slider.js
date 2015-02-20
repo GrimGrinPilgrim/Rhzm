@@ -1,4 +1,5 @@
-
+var obj = "0"
+var sl =''
   $(document).ready(function()
   {
     $(".slider").each(function ()
@@ -16,7 +17,7 @@
     });
   });
 
-  function sliderJS (obj, sl) // slider function
+  function sliderJS () // slider function
   {
     var ul = $(sl).find("ul");
     var bl = $(sl).find("li.slider"+obj);
@@ -26,12 +27,21 @@
 
   $(document).on("click", ".slider .nav span", function() // slider click navigate
   {
-    var sl = $(this).closest(".slider");
+    sl = $(this).closest(".slider");
     $(sl).find("span").removeClass("on");
     $(this).addClass("on");
-    var obj = $(this).attr("rel");
-    sliderJS(obj, sl);
+    
+    obj = $(this).attr("rel");
+    sliderJS();
     return false;
   });
+  $( window ).resize(function() {
+     var ul = $(sl).find("ul");
+     var bl = $(sl).find("li.slider"+obj);
+     var step = $('.slider li').width();
+     
+    $(ul).css({marginLeft:"-"+step*obj})
+      console.log(ul.css('margin-left'))
+    })
 
 

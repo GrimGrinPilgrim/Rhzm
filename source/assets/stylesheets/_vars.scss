@@ -49,6 +49,7 @@ $gutter: 25px;
 $break-1: 478px;
 $break-2: 768px;
 $break-3: 1024px;
+$break-4: 1600px;
 @mixin respond-to($media) {
   @if $media == sm {
     @media only screen and (max-width: $break-1) { @content; }
@@ -58,6 +59,9 @@ $break-3: 1024px;
   }
   @if $media == tablet {
     @media only screen and (max-width: $break-3) { @content; }
+  }
+  @if $media == bigsize {
+    @media only screen and (max-width: $break-4) { @content; }
   }
   @elseif $media == desktop {
     @media only screen and (min-width: $break-3 + 1) { @content; }

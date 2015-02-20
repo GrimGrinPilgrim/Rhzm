@@ -2,6 +2,7 @@
 {
   background-size: cover;
   background-repeat: no-repeat;
+  background-position:center;
   width:100%;
 }
 .no-white
@@ -22,7 +23,7 @@
 {
   background-color:#fed818;
   position:relative;
-  height:100vh;
+  height:100%;
   text-align:right;
   .main-text
   {
@@ -31,25 +32,63 @@
   &:before
   {
     content:'';
-    width:500px;
-    height:350px;
+    width:845px;
+    height:600px;
     background-image:image-url('40.png');
     background-size: cover;
     background-repeat: no-repeat;
     position:absolute;
     z-index:100;
     left:0;
-    top:30%;
+    top:27%;
+    @include respond-to (bigsize) {
+      width:563px;
+      height:400px;
+      top:45%;
+    }
+  }
+  img
+  {
+    width:650px;
+    padding-bottom:20px;
+    @include respond-to (bigsize) {
+      width:470px;
+    }
   }
 }
 #blue
 {
- background: linear-gradient(to right, black 0%,black 71%,#000000 71%,#0166b3 29%,#0166b3 100%);
+ background: linear-gradient(to right, black 0%,black 65%,#000000 65%,#0166b3 35%,#0166b3 100%); 
+ position:relative;
+ &:after
+ {
+   content:'';
+    width:350px;
+    height:100%;
+    background-image:image-url('alexS.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position:absolute;
+    z-index:100;
+    right:10%;
+    top:0%;
+    @include respond-to (bigsize) {
+      right:4%;
+    }
+ }
+  article
+  {
+    position:relative;
+    z-index:100000;
+  }
 }
 #alexCover
 {
   background-image:image-url('alexCover.jpg');
-  height:100vh;
+  height:70vh;
+  @include respond-to (bigsize) {
+    height:60vh;
+  }
 }
 #gram
 {
@@ -91,14 +130,43 @@
   padding-top: 55px;
   padding-bottom: 50px;
   height: 500px;
+  @include respond-to (bigsize) {
+    height:auto;
+  }
+  
 }
 #movie
 {
   background-image:image-url('bg_movie.jpg');
+  position:relative;
   .main-text
   {
     font-size: 24px;
   }
+  &:after
+ {
+    content:'';
+    width:300px;
+    height:300px;
+    background-image:image-url('cover1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position:absolute;
+    z-index:100;
+    left:2%;
+    top:105px;
+     @include respond-to (bigsize) {
+      width:250px;
+      height:250px;
+    }
+ }
+ article
+ {
+   margin-left:90px;
+   @include respond-to (bigsize) {
+    margin-left:190px;
+  }
+ }
 }
 #black
 {
@@ -107,6 +175,9 @@
   {
     display:block;
     margin:10px;
+    @include respond-to (bigsize) {
+      margin-left:190px;
+    }
   }
 }
 #green-blue
@@ -121,11 +192,15 @@
 #elvis_bg
 {
   background-image:image-url('elvisBg.jpg');
-  height:60vh;
+  height:50vh;
 }
 #slider_beatles
 {
   background-color: #032623;
+  .swiper-slide img
+  {
+    width:60%;
+  }
 }
 #triangle
 {
@@ -143,7 +218,7 @@
 #end
 {
   background-image:image-url('endbg.jpg');
-  height:60vh;
+  height:100vh;
 }
 
 
