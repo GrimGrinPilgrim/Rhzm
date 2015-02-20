@@ -39,3 +39,120 @@ body{
 //   padding-top: 15px;
 //   padding-bottom: 15px;
 // }
+ @-webkit-keyframes moveSlideshow {
+        0%   { 
+            -webkit-transform: translateX(0); 
+            -moz-transform:    translateX(0); 
+            -ms-transform:     translateX(0); 
+            -o-transform:      translateX(0); 
+            transform:         translateX(0); 
+        }    
+        100% { 
+            -webkit-transform: translateX(-1684px); 
+            -moz-transform:    translateX(-1684px); 
+            -ms-transform:     translateX(-1684px); 
+            -o-transform:      translateX(-1684px); 
+            transform:         translateX(-1684px); 
+        }
+    }
+    @-moz-keyframes moveSlideshow {
+        0%   { 
+            -webkit-transform: translateX(0); 
+            -moz-transform:    translateX(0); 
+            -ms-transform:     translateX(0); 
+            -o-transform:      translateX(0); 
+            transform:         translateX(0); 
+        }    
+        100% { 
+            -webkit-transform: translateX(-1684px); 
+            -moz-transform:    translateX(-1684px); 
+            -ms-transform:     translateX(-1684px); 
+            -o-transform:      translateX(-1684px); 
+            transform:         translateX(-1684px); 
+        }
+    }
+.img_white_border
+{
+  border-bottom:6px solid white;
+}    
+.moved_pic
+{
+  height: 389px;
+  position: relative;
+  overflow: hidden;
+  
+}
+.pic_row
+{
+  width: 3197px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  -moz-transition: opacity 0.5s ease-out;
+  -o-transition: opacity 0.5s ease-out;
+  -webkit-transition: opacity 0.5s ease-out;
+  -ms-transition: opacity 0.5s ease-out;
+  -webkit-animation: moveSlideshow 120s linear infinite;
+  -moz-animation: moveSlideshow 120s linear infinite;
+  -webkit-transform: translate3d(0,0,0);
+}    
+
+    .slider 
+{
+  margin: 0 auto;
+  z-index: 9;
+  width: 1200px;
+  height: 758px;
+  overflow: hidden;
+  position: relative;
+  ul,li
+  {
+    margin:0;
+    padding:0;
+  }
+  ul 
+  {
+    width: 9999px;
+  } 
+  li 
+  {
+    list-style-type: none;
+    float: left;
+    width: 1200px;
+    height: 758px;
+    overflow:hidden;
+  }
+  .nav 
+  {
+    position: absolute;
+    left: 15px;
+    bottom: 12px;
+  }
+}
+
+
+.slider .nav span.on {
+background: #61a58c;}
+.slider .nav span
+{
+  opacity: 0.8;
+  background: #074a44;
+  margin: 0 16px 0 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  display: block;
+  float: left;
+  box-shadow: 0 1px 2px #000;
+  
+}
+.swiper-container img[data-type="gif"]
+{
+  width:40%;
+  margin:2%;
+  
+}
