@@ -41,11 +41,11 @@
     color: rgb(192, 18, 43);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .main-text, .footnote {
-    width: 80%;
+    // width: 80%;
     padding-right: 10%;
-    padding-left: 10%;
+    padding-left: 5%;
   }
   .footnote {
     text-align: center;
@@ -86,6 +86,9 @@
 article
 {
   padding:80px;
+  @include respond-to (middlesize) {
+    padding:40px;
+    }
 }
 blockquote
 {

@@ -12,6 +12,20 @@
 #patty
 {
   background-image:image-url('patti.jpg');
+  .offset-2
+  {
+    @include respond-to (tablet) 
+    {
+      margin-left:0;
+    }
+  }
+  .col-8
+  {
+    @include respond-to (tablet) 
+    {
+      width:90%;
+    }
+  }
 }
 #cover
 {
@@ -29,6 +43,14 @@
   {
     font-size: 20px;
   }
+  .title
+  {
+    @include respond-to (tablet) 
+    {
+        margin-top:100px;
+        margin-right:10%;
+    }
+  }
   &:before
   {
     content:'';
@@ -38,13 +60,24 @@
     background-size: cover;
     background-repeat: no-repeat;
     position:absolute;
-    z-index:100;
+    z-index:10000000;
     left:0;
     top:27%;
     @include respond-to (bigsize) {
       width:563px;
       height:400px;
       top:45%;
+    }
+    @include respond-to (middlesize) {
+      width:375px;
+      height:266px;
+      top:45%;
+    }
+     @include respond-to (tablet) 
+    {
+       z-index:0;
+       opacity:0.3;
+       top:10px;
     }
   }
   img
@@ -54,11 +87,37 @@
     @include respond-to (bigsize) {
       width:470px;
     }
+    @include respond-to (tablet) 
+    {
+        width:100%;
+    }
   }
 }
 #blue
 {
- background: linear-gradient(to right, black 0%,black 65%,#000000 65%,#0166b3 35%,#0166b3 100%); 
+  article
+  {
+      background:black;
+      @include respond-to (tablet) 
+    {
+      background:none;
+      margin-top:430px;
+      width:90%;
+      padding-right: 15%;
+      padding-left: 5%;
+    }
+    @include respond-to (mob) 
+    {
+      margin-top:250px;
+      background:black;
+      padding-top:10px;
+    }
+  }
+ background: linear-gradient(to right, black 0%,black 60%,#000000 60%,#0166b3 40%,#0166b3 100%);
+ @include respond-to (tablet) 
+    {
+      background: linear-gradient(to top, black 0%,black 55%,#000000 55%,#0166b3 45%,#0166b3 100%);
+    }
  position:relative;
  &:after
  {
@@ -75,6 +134,26 @@
     @include respond-to (bigsize) {
       right:4%;
     }
+    @include respond-to (middlesize) {
+      right:0%;
+      width:295px;
+      height:100%;
+    }
+    @include respond-to (tablet) 
+    {
+      height:400px;
+      width:470px;
+      left:50%;
+      margin-left:-235px;
+      margin-top:30px;
+    }
+    @include respond-to (mob) 
+    {
+     height:210px;
+      width:300px;
+      margin-left:-150px;
+      margin-top:20px;
+    }
  }
   article
   {
@@ -88,6 +167,12 @@
   height:70vh;
   @include respond-to (bigsize) {
     height:60vh;
+  }
+ @include respond-to (middlesize) {
+    height:55vh;
+  }
+  @include respond-to (mob) {
+    height:20vh;
   }
 }
 #gram
@@ -142,6 +227,18 @@
   .main-text
   {
     font-size: 24px;
+     @include respond-to (middlesize) {
+      font-size: 22px;
+    }
+     @include respond-to (tablet) {
+      margin-top: 430px;
+      font-size: 18px;
+      width:80%;
+      margin-left:1%;
+    }
+    @include respond-to (mob) {
+      margin-top: 320px;
+    }
   }
   &:after
  {
@@ -159,12 +256,49 @@
       width:250px;
       height:250px;
     }
+    @include respond-to (middlesize) {
+      width:220px;
+      height:220px;
+    }
+    @include respond-to (tablet) {
+      width:400px;
+      height:400px;
+      left:50%;
+      margin-left:-200px;
+      top:50px;
+    }
+    @include respond-to (mob) 
+    {
+      width:300px;
+      height:300px;
+      margin-left:-150px;
+    }
  }
  article
  {
-   margin-left:90px;
-   @include respond-to (bigsize) {
-    margin-left:190px;
+    margin-left:90px;
+    @include respond-to (bigsize) {
+      margin-left:190px;
+    }
+    @include respond-to (middlesize) {
+    margin-left:160px;
+    }
+    @include respond-to (tablet) {
+    padding-left:5%;
+    margin-left:0px;
+    padding-bottom:80px;
+    }
+  .offset-1
+  {
+    @include respond-to (tablet) {
+     margin-left:2%;
+    }
+  }
+  .col-9
+  {
+    @include respond-to (tablet) {
+    width:100%;
+    }
   }
  }
 }
@@ -178,29 +312,47 @@
     @include respond-to (bigsize) {
       margin-left:190px;
     }
+    @include respond-to (tablet) {
+      margin:30px  auto;
+      width:70%;
+    }
   }
 }
 #green-blue
 {
   background-color: #081c1c;
 }
-#elvis_bg
-{
-  background-image:image-url('elvisBg.jpg');
-  height:60vh;
-}
+
 #elvis_bg
 {
   background-image:image-url('elvisBg.jpg');
   height:50vh;
+   @include respond-to (tablet) {
+      height:30vh;
+    }
+  @include respond-to (mob) {
+      height:20vh;
+    }
 }
 #slider_beatles
 {
   background-color: #032623;
   .swiper-slide img
   {
-    width:60%;
-    
+    height:80vh;
+    width: auto;
+    @include respond-to (tablet) {
+      height:50vh;
+      margin-bottom:7%;
+    }
+    @include respond-to (mob) {
+      height:30vh;
+      margin-bottom:7%;
+    }
+  }
+  img
+  {
+    margin:5% 0;
   }
 }
 #triangle
@@ -211,6 +363,12 @@
 {
   background-image:image-url('stormbg.jpg');
   height:60vh;
+   @include respond-to (tablet) {
+       height:30vh;
+    }
+    @include respond-to (mob) {
+      height:20vh;
+    }
 }
 #blur
 {
@@ -220,6 +378,18 @@
 {
   background-image:image-url('endbg.jpg');
   height:100vh;
+  @include respond-to (middlesize) 
+    {
+      height:90vh;
+    }
+  @include respond-to (tablet) 
+    {
+      height:60vh;
+    }
+   @include respond-to (mob) 
+    {
+      height:30vh;
+    }
 }
 
 

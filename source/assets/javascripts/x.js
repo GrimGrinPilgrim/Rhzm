@@ -7,8 +7,11 @@ $(function() {
     var swiper = new Swiper('.swiper-container', {
         pagination: '.swiper-pagination',
         paginationClickable: '.swiper-pagination',
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
+        spaceBetween: 30
+    });
+    var swiper2 = new Swiper('.swiper-container2', {
+        pagination: '.swiper-pagination2',
+        paginationClickable: '.swiper-pagination2',
         spaceBetween: 30
     });
     

@@ -12,7 +12,7 @@
  * 
  * Released on: February 13, 2015
  */
-.swiper-container {
+.swiper-container, .swiper-container2 {
   margin: 0 auto;
   position: relative;
   overflow: hidden;
@@ -154,7 +154,7 @@
   background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 27 44'><path d='M27,22L27,22L5,44l-2.1-2.1L22.8,22L2.9,2.1L5,0L27,22L27,22z' fill='%23ffffff'/></svg>");
 }
 /* Pagination Styles */
-.swiper-pagination {
+.swiper-pagination, .swiper-pagination2 {
   position: absolute;
   text-align: center;
   -webkit-transition: 300ms;
@@ -167,7 +167,7 @@
   transform: translate3d(0, 0, 0);
   z-index: 10;
 }
-.swiper-pagination.swiper-pagination-hidden {
+.swiper-pagination.swiper-pagination-hidden, .swiper-pagination2.swiper-pagination-hidden {
   opacity: 0;
 }
 .swiper-pagination-bullet {
@@ -233,12 +233,15 @@
   margin: 5px 0;
   display: block;
 }
-.swiper-container-horizontal > .swiper-pagination {
+.swiper-container-horizontal > .swiper-pagination, .swiper-container-horizontal > .swiper-pagination2 {
   bottom: 10px;
   left: 0;
   width: 100%;
 }
 .swiper-container-horizontal > .swiper-pagination .swiper-pagination-bullet {
+  margin: 0 5px;
+}
+.swiper-container-horizontal > .swiper-pagination2 .swiper-pagination-bullet {
   margin: 0 5px;
 }
 /* 3D Container */
@@ -418,4 +421,17 @@
 }
 .swiper-scrollbar-cursor-drag {
   cursor: move;
+}
+
+
+.swiper-container, .swiper-container2{
+  @include respond-to (tablet) {
+    overflow: inherit;
+    }
+}
+.swiper-container-horizontal > .swiper-pagination, .swiper-container-horizontal > .swiper-pagination2{
+  @include respond-to (tablet) 
+    {
+      bottom:-30px;
+    }
 }

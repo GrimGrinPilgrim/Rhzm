@@ -80,11 +80,24 @@ html, body{
   -webkit-transform: translate3d(0,0,0);
 }    
 // 
-.swiper-slide img{
+.swiper-slide img
+{
   width: 100%;
 }
-.swiper-container img[data-type="gif"]
+.swiper-container2 img[data-type="gif"]
 {
   width:40%;
   margin:2%;
 }
+.swiper-container, .swiper-container2{
+  @include respond-to (mob) {
+    overflow: none;
+    }
+}
+.swiper-container-horizontal > .swiper-pagination, .swiper-container-horizontal > .swiper-pagination2{
+  @include respond-to (mob) 
+    {
+      bottom:-30px;
+    }
+}
+ 
